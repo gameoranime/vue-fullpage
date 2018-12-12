@@ -7,6 +7,7 @@
 		<div class="slide"><h1>Slide 3.2</h1></div>
 		<div class="slide"><h1>Slide 3.3</h1></div>
 		<div class="slide"><h1>Slide 3.4</h1></div>
+		<div class="slide"><h1>Slide 3.5</h1></div>
       </div>
       <div class="section">
         <button class="prev" @click="$refs.fullpage.api.moveSectionUp()">Prev</button>
