@@ -2,6 +2,9 @@
   <div id="app">
     <full-page ref="fullpage" :options="options">
       <div class="section">
+        <h1 id="page-title" class="fadeIn">动画fullpage示例demo</h1>
+      </div>
+      <div class="section">
         <div class="slide">
           <h1>Section 3
             <button class="next" @click="$refs.fullpage.api.moveSectionDown()">Next</button>
@@ -42,7 +45,20 @@ export default {
         menu: "#menu",
         anchors: ["page1", "page2", "page3"],
         sectionsColor: ["#41b883", "#ff5f45", "#0798ec"],
-        scrollOverflow: true
+        scrollOverflow: true,
+        afterLoad:function(origin,idx){
+          console.log(idx.index);
+          
+          $('#page-title').removeClass("animated");
+          if(idx.index == 0){
+            $('#page-title').addClass("animated");
+            $('#page-title').addClass("fadeIn");
+          }
+          
+        },
+        onLeave:function(){
+          $('#page-title').removeClass("animated fadeIn");
+        }
       }
     };
   }
